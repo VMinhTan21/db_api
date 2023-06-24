@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || process.env.port || 4000
 const cors = require('cors')
 
 const mongoose = require('mongoose')
@@ -44,6 +44,6 @@ app.use('/orderDetail', orderDetailRoute)
 app.use('/drink', drinkRoute)
 app.use('/staff', staffRoute)
 
-app.listen(PORT, function() {
+app.listen(process.env.port, function() {
     console.log("Server is running on PORT: ", PORT)
 })
