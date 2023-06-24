@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 const cors = require('cors')
 
 const mongoose = require('mongoose')
@@ -39,10 +39,10 @@ app.use(bodyParser.urlencoded(
 ))
 app.use(bodyParser.json())
 
-app.use('/api/order', orderRoute)
-app.use('/api/orderDetail', orderDetailRoute)
-app.use('/api/drink', drinkRoute)
-app.use('/api/staff', staffRoute)
+app.use('/order', orderRoute)
+app.use('/orderDetail', orderDetailRoute)
+app.use('/drink', drinkRoute)
+app.use('/staff', staffRoute)
 
 app.listen(PORT, function() {
     console.log("Server is running on PORT: ", PORT)
