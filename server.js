@@ -39,11 +39,12 @@ app.use(bodyParser.urlencoded(
 ))
 app.use(bodyParser.json())
 
+app.get('/', (req, res) => res.send('Hello World!' ))
 app.use('/order', orderRoute)
 app.use('/orderDetail', orderDetailRoute)
 app.use('/drink', drinkRoute)
 app.use('/staff', staffRoute)
 
-app.listen(process.env.port, function() {
+app.listen(PORT, function() {
     console.log("Server is running on PORT: ", PORT)
 })
