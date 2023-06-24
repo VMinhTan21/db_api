@@ -44,6 +44,6 @@ app.use('/api/orderDetail', orderDetailRoute)
 app.use('/api/drink', drinkRoute)
 app.use('/api/staff', staffRoute)
 
-app.listen(PORT, function() {
+app.listen(process.env.port, function() {
     console.log("Server is running on PORT: ", PORT)
 })
