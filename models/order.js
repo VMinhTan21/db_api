@@ -6,6 +6,7 @@ let Order = new Schema({
     ObjectID: String,
     Date: String,
     StaffID: String,
+    Status: String,
     OrderList: Array,
     Note: String,
     Total: Number
